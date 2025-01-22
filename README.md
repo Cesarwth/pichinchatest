@@ -12,8 +12,7 @@ Este proyecto es una aplicación simple de Spring Boot que utiliza H2 como base 
 
 ### 1. Clona el repositorio en local
 
-git clone <URL_DEL_REPOSITORIO>
-cd <NOMBRE_DEL_REPOSITORIO>
+git clone https://github.com/Cesarwth/pichinchatest.git
 
 ### 2. Construye y levanta la aplicación con Docker
 
