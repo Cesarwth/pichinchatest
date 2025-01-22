@@ -16,13 +16,15 @@ git clone https://github.com/Cesarwth/pichinchatest.git
 
 ### 2. Construye y levanta la aplicación con Docker
 
-docker-compose up --build
+docker build -t test-app .
 
 Esto hará lo siguiente:
 
 Construirá la imagen del contenedor para la aplicación.
 Levantará el contenedor de la aplicación y lo expondrá en el puerto 8080.
 
+Para levantar la app en el puerto 8080 de localhost:
+docker run -p 8080:8080 test-app
 ### 3. Accede a la aplicación
 Una vez que el contenedor esté corriendo, puedes acceder a la aplicación en tu navegador en la siguiente dirección:
 
