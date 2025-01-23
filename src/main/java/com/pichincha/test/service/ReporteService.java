@@ -31,7 +31,7 @@ public class ReporteService {
         LocalDateTime inicio = LocalDateTime.parse(reporteRequestDTO.getFechaInicio(), DateTimeFormatter.ISO_DATE_TIME);
         LocalDateTime fin = LocalDateTime.parse(reporteRequestDTO.getFechaFin(), DateTimeFormatter.ISO_DATE_TIME);
 
-        List<Cuenta> cuentas = cuentaRepository.findByClienteId(reporteRequestDTO.getClienteId());
+        List<Cuenta> cuentas = cuentaRepository.findByClienteClienteId(reporteRequestDTO.getClienteId());
 
         List<CuentaReporteDTO> cuentasReporte = cuentas.stream().map(cuenta -> {
             List<Movimientos> movimientos = movimientosRepository.findByCuentaIdAndFechaBetween(

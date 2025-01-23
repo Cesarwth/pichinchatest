@@ -28,6 +28,15 @@ public class MovimientosService {
         this.cuentaRepository = cuentaRepository;
     }
 
+    public Cuenta obtenerCuentaPorId(Long cuentaId) {
+        log.debug("Obteniendo cuenta por ID: Cuenta ID={}", cuentaId);
+        return cuentaRepository.findById(cuentaId)
+                .orElseThrow(() -> {
+                    log.error("Cuenta no encontrada: Cuenta ID={}", cuentaId);
+                    return new CuentaException(MensajeError.CUENTA_NO_EXISTE.getMensaje());
+                });
+    }
+
     @Transactional
     public MovimientoResponseDTO registrarMovimiento(MovimientoRequestDTO movimientoRequestDTO) {
         log.info("Iniciando registro de movimiento: Cuenta ID={}, Valor={}", movimientoRequestDTO.getCuentaId(), movimientoRequestDTO.getValor());
